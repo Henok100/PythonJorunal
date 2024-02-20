@@ -25,8 +25,8 @@ num_UAVs = 6
 
 # Generate the list of CSV filenames
 # csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
-csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(num_UAVs)]
-# csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(num_UAVs)]
+# csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(num_UAVs)]
+csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(num_UAVs)]
 
 
 # Returns a PORT list according to the number of UAVs
