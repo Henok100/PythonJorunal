@@ -167,7 +167,7 @@ if __name__ == "__main__":
     # centerY = 4471112.47
 
     # Open the XML file for writing
-    f = open("UPV_3kmm.xml", "w")
+    f = open("Valencia_1.xml", "w")
     
     # Write the XML file header
     print_header(f)
@@ -181,10 +181,10 @@ if __name__ == "__main__":
         building = get_building(buildingId)
         
         # Iterate over each wall in the building
-        height = generate_height()     #   For UPV
+        #height = generate_height()     #   For UPV
         for index, wall in building.iterrows():
             # Create the wall based on its start and end points
-            make_wall(wall, height)
+            make_wall(wall, 1)
     
     # Write the XML file footer
     print_footer(f)

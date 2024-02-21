@@ -16,8 +16,8 @@ def read_csv_file(file_path):
     return coordinates
 
 # Specify the file paths for the two CSV files
-file1 = 'City_Profiles/Valencia/20_m/20_m_0_path_test.csv'
-file2 = 'City_Profiles/Valencia/20_m/20_m_3_path_test.csv'
+file1 = 'City_Profiles/Valencia/20_m/20_m_1_path_test.csv'
+file2 = 'City_Profiles/Valencia/20_m/20_m_2_path_test.csv'
 
 # Read the coordinates from the CSV files
 uav1_coordinates = read_csv_file(file1)
