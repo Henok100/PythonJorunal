@@ -123,7 +123,7 @@ def make_wall(wall, height):
 
     # Print or use the calculated values for further processing
     # print_wall(posx, posy, angle, length, 5, height)
-    print_wall(posx,posy,angle,length,1,height)
+    print_wall(posx,posy,angle,length,10,height)
 
 
 
@@ -181,10 +181,10 @@ if __name__ == "__main__":
         building = get_building(buildingId)
         
         # Iterate over each wall in the building
-        #height = generate_height()     #   For UPV
+        height = generate_height()     #   For UPV
         for index, wall in building.iterrows():
             # Create the wall based on its start and end points
-            make_wall(wall, 1)
+            make_wall(wall, height)
     
     # Write the XML file footer
     print_footer(f)
