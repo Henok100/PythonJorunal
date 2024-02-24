@@ -19,5 +19,7 @@ plt.xlabel('UAV-UAV-Separation', fontsize=12)
 plt.ylabel('Packet Delivery Ratio', fontsize=12)
 plt.title('')
 
+plt.savefig('high_res_graph.png', dpi=300)
+
 # Display the graph
 plt.show()
