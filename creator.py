@@ -8,9 +8,9 @@ import numpy as np
 def generate_height():
     # Define the desired range
     min_height = 25
-    max_height = 100
+    max_height = 70
     target_min = 30
-    target_max = 80
+    target_max = 60
 
     # Define the weights for each range
     weights = []
@@ -34,7 +34,7 @@ def init_df():
     # Set the filename to the path of the shapefile or CSV file containing the obstacle data
     # You can either uncomment the getFileName() function call and implement it to dynamically retrieve the filename,
     # or manually specify the filename as a string
-    filename = "UPV_3km.csv"
+    filename = "Valencia1.csv"
 
     # Print a message to indicate that the shapefile is being read
     print("Reading shapeFile")
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     # centerY = 4471112.47
 
     # Open the XML file for writing
-    f = open("Valencia_1.xml", "w")
+    f = open("Valencia1.xml", "w")
     
     # Write the XML file header
     print_header(f)
