@@ -17,7 +17,7 @@ CLIENT = Method.GetHostName()
 FORMAT = 'utf-8'
 
 #For UAVs
-numUavs = 2   #Change the number as desired.
+numUavs = 7   #Change the number as desired.
 numRows = []
 LocationList = []
 
@@ -38,9 +38,9 @@ ADDR_Protocol = (CLIENT, PORT_Protocol)
 
 city_profile = "Valencia"
 
-# csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(numUavs)]
+csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(numUavs)]
 # csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(numUavs)]
-csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(numUavs)]
+# csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(numUavs)]
 
 
 ClientSocket = Method.SocketCreator()
@@ -70,12 +70,12 @@ def Send():
     # Mov8 = M.Mov8()
     # Mov10 = M.Mov10()
     for Rowindex in range(NUMRows):
-        #if counter % 2 == 0: ## remove this conditional if your PC is high End.
-        SendProtocolMessage()
+        if counter % 2 == 0: ## remove this conditional if your PC is high End.
+            SendProtocolMessage()
         
         for UAVindex in range(numUavs):
             temp = XYZ_NumPyArray[UAVindex]
-            # #For UAV to GND (static)
+            # #For UAV to omnet GND (static)
             # if UAVindex == 1:
             #     x = 210
             #     y = -100

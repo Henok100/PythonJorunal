@@ -22,18 +22,18 @@ files = ['Comparision/UAV_TO_VEH_NLOS/_60m/TRG.csv', \
          'Comparision/UAV_TO_VEH_NLOS/_60m/RF.csv', \
          'Comparision/UAV_TO_VEH_NLOS/_60m/NF.csv']
 
-files=['Dense/UPV.csv', 'Medium/Madrid.csv']
+files=['UAV_to_GND/FSP.csv', 'UAV_to_GND/LOG.csv', 'UAV_to_GND/Rician.csv', 'UAV_to_GND/Nakagami.csv']
 
 data = []
-#xlabel = ['TwoRayGround','LogNormalShadowing', 'RicianFading', 'NakagamiFading']
-xlabel = ['Dense[UPV]', 'Sparse[Madrid]']
+xlabel = ['FreeSpace','Log-Distance', 'RicianFading', 'NakagamiFading']
+# xlabel = ['Dense[UPV]', 'Sparse[Madrid]']
 
 # Read the CSV file into a pandas DataFrame
-for i in range(2):
+for i in range(4):
     data.append(pd.read_csv(files[i]))
 
 # Create a figure and axis object
-fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(25, 25))
+fig, axs = plt.subplots(nrows=1, ncols=4, figsize=(25, 25))
 
 # Extract the header row as a list
 headers = list(data[0].columns)
@@ -55,7 +55,7 @@ for i, ax in enumerate(axs):
     ax.set_ylabel('Packet Delivery Ratio', fontsize = 16).set_color('blue')
 
 # Super Title
-plt.suptitle("UAV-to-UAV Performance Comaprision [Rician Fading Channel Model]", fontsize=24).set_color('blue')
+plt.suptitle("UAV-to-VEH Performance", fontsize=24).set_color('blue')
 
 # Display the plot
 plt.show()

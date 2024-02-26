@@ -21,5 +21,5 @@ plt.title('')
 
 plt.savefig('high_res_graph.png', dpi=300)
 
-# Display the graph
+# Display the graph 
 plt.show()
