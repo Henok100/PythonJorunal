@@ -17,7 +17,7 @@ CLIENT = Method.GetHostName()
 FORMAT = 'utf-8'
 
 #For UAVs
-numUavs = 7   #Change the number as desired.
+numUavs = 2   #Change the number as desired.
 numRows = []
 LocationList = []
 
@@ -33,7 +33,7 @@ ADDR_Protocol = (CLIENT, PORT_Protocol)
     The path_test file(s) is(are) needed from Ardusim!
     We first assign these files to *csv_filename* list.
 
-    must be the same as the Method's *csv_filename*.
+    must be the  same as the Method's *csv_filename*.
 """
 
 city_profile = "Valencia"
@@ -67,11 +67,11 @@ def Send():
     ###  for LOS path (Mobile)
     # Mov4 = M.Mov4()
     # Mov6 = M.Mov6()
-    # Mov8 = M.Mov8()
+    # Mov8 = M.Mov8() 
     # Mov10 = M.Mov10()
     for Rowindex in range(NUMRows):
-        if counter % 2 == 0: ## remove this conditional if your PC is high End.
-            SendProtocolMessage()
+        #if counter % 2 == 0: ## remove this conditional if your PC is high End.
+        SendProtocolMessage()
         
         for UAVindex in range(numUavs):
             temp = XYZ_NumPyArray[UAVindex]
