@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Read the CSV file
-data = pd.read_csv('obstacle_free.csv')
+data = pd.read_csv('with_obstacle.csv')
 
 # Extract x and y data from the CSV columns
 x = data.iloc[:, 0]
