@@ -17,12 +17,12 @@ import matplotlib.ticker as ticker
          'High_Urban/NY_UAVtoVeh_NLOS/NF.csv'] """
 
 """For Comparision """
-files = ['Comparision/UAV_TO_VEH_NLOS/_60m/TRG.csv', \
-         'Comparision/UAV_TO_VEH_NLOS/_60m/LNS.csv', \
-         'Comparision/UAV_TO_VEH_NLOS/_60m/RF.csv', \
-         'Comparision/UAV_TO_VEH_NLOS/_60m/NF.csv']
+# files = ['Comparision/UAV_TO_VEH_NLOS/_60m/TRG.csv', \
+#          'Comparision/UAV_TO_VEH_NLOS/_60m/LNS.csv', \
+#          'Comparision/UAV_TO_VEH_NLOS/_60m/RF.csv', \
+#          'Comparision/UAV_TO_VEH_NLOS/_60m/NF.csv']
 
-files=['UAV_to_GND/FSP.csv', 'UAV_to_GND/LOG.csv', 'UAV_to_GND/Rician.csv', 'UAV_to_GND/Nakagami.csv']
+files=['UAV_to_UAV/FSP.csv', 'UAV_to_UAV/LOG.csv', 'UAV_to_UAV/Rician.csv', 'UAV_to_UAV/Nakagami.csv']
 
 data = []
 xlabel = ['FreeSpace','Log-Distance', 'RicianFading', 'NakagamiFading']
@@ -55,7 +55,7 @@ for i, ax in enumerate(axs):
     ax.set_ylabel('Packet Delivery Ratio', fontsize = 16).set_color('blue')
 
 # Super Title
-plt.suptitle("UAV-to-VEH Performance", fontsize=24).set_color('blue')
+plt.suptitle("UAV-to-UAV Performance", fontsize=24).set_color('blue')
 
 # Display the plot
 plt.show()
