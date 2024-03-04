@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Read the CSV file
-data = pd.read_csv('with_obstacle.csv')
+data = pd.read_csv('with_obstacle_Art.csv')
 
 # Extract x and y data from the CSV columns
 x = data.iloc[:, 0]
@@ -19,7 +19,7 @@ plt.xlabel('UAV-UAV-Separation', fontsize=12)
 plt.ylabel('Packet Delivery Ratio', fontsize=12)
 plt.title('')
 
-plt.savefig('With_Obstacle.png', dpi=300)
+plt.savefig('With_Obstacle_Art.png', dpi=300)
 
 # Display the graph 
 plt.show()

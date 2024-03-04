@@ -7,10 +7,10 @@ import numpy as np
 
 def generate_height():
     # Define the desired range
-    min_height = 25
-    max_height = 70
-    target_min = 30
-    target_max = 60
+    min_height = 70
+    max_height = 150
+    target_min = 75
+    target_max = 140
 
     # Define the weights for each range
     weights = []
