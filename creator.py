@@ -34,7 +34,7 @@ def init_df():
     # Set the filename to the path of the shapefile or CSV file containing the obstacle data
     # You can either uncomment the getFileName() function call and implement it to dynamically retrieve the filename,
     # or manually specify the filename as a string
-    filename = "Valencia3.csv"
+    filename = "UPV_3km.csv"
 
     # Print a message to indicate that the shapefile is being read
     print("Reading shapeFile")
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     # centerY = 4471112.47
 
     # Open the XML file for writing
-    f = open("Valencia3.xml", "w")
+    f = open("Valencia10.xml", "w")
     
     # Write the XML file header
     print_header(f)
