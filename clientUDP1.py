@@ -39,8 +39,8 @@ ADDR_Protocol = (CLIENT, PORT_Protocol)
 city_profile = "Valencia"
 
 # csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(numUavs)]
-# csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(numUavs)]
-csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(numUavs)]
+csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(numUavs)]
+# csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(numUavs)]
 
 
 ClientSocket = Method.SocketCreator()
@@ -71,7 +71,7 @@ def Send():
     # Mov10 = M.Mov10()
     for Rowindex in range(NUMRows):
         #if counter % 2 == 0: ## remove this conditional if your PC is high End.
-        #SendProtocolMessage()
+        SendProtocolMessage()
         
         for UAVindex in range(numUavs):
             temp = XYZ_NumPyArray[UAVindex]
