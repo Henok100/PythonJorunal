@@ -8,10 +8,10 @@ import numpy as np
 
 def generate_height():
     # Define the desired range
-    min_height = 110
-    max_height = 150
-    target_min = 115
-    target_max = 145
+    min_height = 70
+    max_height = 125
+    target_min = 85
+    target_max = 115
 
     # Define the weights for each range
     weights = []
@@ -51,7 +51,7 @@ def init_df():
 
 def print_header(f):
 	f.write("<environment>\n")
-	f.write("<material id=\"1\" resistivity=\"100\" relativePermittivity=\"4.5\" relativePermeability=\"1\" /> <!-- concrete-->\n")
+	f.write("<material id=\"1\" resistivity=\"1000\" relativePermittivity=\"4.5\" relativePermeability=\"1\" /> <!-- concrete-->\n")
 
 def print_footer(f):
 	f.write("\n</environment>")
@@ -124,7 +124,7 @@ def make_wall(wall, height):
 
     # Print or use the calculated values for further processing
     # print_wall(posx, posy, angle, length, 5, height)
-    print_wall(posx,posy,angle,length,randint(10, 15),height)
+    print_wall(posx,posy,0,-length,randint(10, 15),height)
 
 
 
