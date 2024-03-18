@@ -82,7 +82,7 @@ def PreProcessor(df, i):
         Location1['y(m)'] = Location1['y(m)'] - 4371261.32
         
     elif i == 1:
-        Location1['x(m)'] = Location1['x(m)'] - 728413.96
+        Location1['x(m)'] = Location1['x(m)'] - 728773.96
         Location1['y(m)'] = Location1['y(m)'] - 4371261.32
 
     # Path 2
