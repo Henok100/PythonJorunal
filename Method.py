@@ -64,57 +64,52 @@ def PreProcessor(df, i):
     Location1 = Location1.drop_duplicates(subset=['y(m)'], keep='last')
  
     # Valencia
-    # Path 1
+
+    ###
+    #For Separation Test
     # if i == 0:
-    #     Location1['x(m)'] = Location1['x(m)'] - 728843.96
-    #     Location1['y(m)'] = Location1['y(m)'] - 4371961.32
-        #print("path-1")
-    # if i == 0:
-    #     Location1['x(m)'] = Location1['x(m)'] - 729313.96
+    #     Location1['x(m)'] = Location1['x(m)'] - 729013.96
     #     Location1['y(m)'] = Location1['y(m)'] - 4371261.32
         
     # elif i == 1:
-    #     Location1['x(m)'] = Location1['x(m)'] - 728813.96
+    #     Location1['x(m)'] = Location1['x(m)'] - 728643.96
     #     Location1['y(m)'] = Location1['y(m)'] - 4371261.32
-
-    if i == 0:
-        Location1['x(m)'] = Location1['x(m)'] - 729013.96
-        Location1['y(m)'] = Location1['y(m)'] - 4371261.32
-        
-    elif i == 1:
-        Location1['x(m)'] = Location1['x(m)'] - 728643.96
-        Location1['y(m)'] = Location1['y(m)'] - 4371261.32
-
-    # Path 2
-    # elif i == 1:
-    #     Location1['x(m)'] = Location1['x(m)'] - 728843.96
-    #     Location1['y(m)'] = Location1['y(m)'] - 4371961.32   
-    #     #print("path-2")
-
-    # Path 3
-    # elif i == 2:
-    #     Location1['x(m)'] = Location1['x(m)'] - 727834.36
-    #     Location1['y(m)'] = Location1['y(m)'] - 4372110.67
-
-
-    # # Path 4
-    # elif i == 3:
-    #   Location1['x(m)'] = Location1['x(m)'] - 726922.31				
-        # Location1['y(m)'] = Location1['y(m)'] - 4372285.43
-        
-    # elif i == 4:
-    #     Location1['x(m)'] = Location1['x(m)'] - 729549.62		
-    #     Location1['y(m)'] = Location1['y(m)'] - 4371828.58
-
-
-    # # Path 6
-    # elif i == 6:
-    #     Location1['x(m)'] = Location1['x(m)'] - 728009.36 	
-    #     Location1['y(m)'] = Location1['y(m)'] - 4371814.94
+    ###
+    
+    #For UAV-UAV
+    # if i == 0:
+    #     Location1['x(m)'] = Location1['x(m)'] - 727922.10
+    #     Location1['y(m)'] = Location1['y(m)'] - 4372031.83
 
     # elif i == 0:
-    #     Location1['x(m)'] = Location1['x(m)'] - 728206.59 		
-    #     Location1['y(m)'] = Location1['y(m)'] - 4372073.32
+    #     Location1['x(m)'] = Location1['x(m)'] - 727922.10		
+    #     Location1['y(m)'] = Location1['y(m)'] - 4372031.83
+        
+    # elif i == 1:
+    #     Location1['x(m)'] = Location1['x(m)'] - 728402.94
+    #     Location1['y(m)'] = Location1['y(m)'] - 4371914.10
+
+   
+    # elif i == 2:
+    #     Location1['x(m)'] = Location1['x(m)'] - 728843.96
+    #     Location1['y(m)'] = Location1['y(m)'] - 4371961.32   
+
+    # elif i == 3:
+    #     Location1['x(m)'] = Location1['x(m)'] - 727511.47
+    #     Location1['y(m)'] = Location1['y(m)'] - 4372280.28
+
+
+    # elif i == 4:
+    #     Location1['x(m)'] = Location1['x(m)'] - 728825.40			
+    #     Location1['y(m)'] = Location1['y(m)'] - 4371810.62
+        
+    # elif i == 5:
+    #     Location1['x(m)'] = Location1['x(m)'] - 728043.88	
+    #     Location1['y(m)'] = Location1['y(m)'] - 4371727.53
+
+    # elif i == 6:
+    #     Location1['x(m)'] = Location1['x(m)'] - 728256.43	
+    #     Location1['y(m)'] = Location1['y(m)'] - 4372214.30
         
     Location1 = Location1.drop_duplicates(subset=['x(m)'], keep='last')
     Location1 = Location1.drop_duplicates(subset=['y(m)'], keep='last')
