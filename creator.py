@@ -1,6 +1,7 @@
 import pandas as pd
 from pyproj import Proj
 import math
+from random import randint
 #from ex import biased_height
 
 import numpy as np
@@ -8,9 +9,9 @@ import numpy as np
 def generate_height():
     # Define the desired range
     min_height = 70
-    max_height = 150
-    target_min = 75
-    target_max = 140
+    max_height = 125
+    target_min = 85
+    target_max = 115
 
     # Define the weights for each range
     weights = []
@@ -34,7 +35,7 @@ def init_df():
     # Set the filename to the path of the shapefile or CSV file containing the obstacle data
     # You can either uncomment the getFileName() function call and implement it to dynamically retrieve the filename,
     # or manually specify the filename as a string
-    filename = "UPV_3km.csv"
+    filename = "Val_ob.csv"
 
     # Print a message to indicate that the shapefile is being read
     print("Reading shapeFile")
@@ -50,7 +51,7 @@ def init_df():
 
 def print_header(f):
 	f.write("<environment>\n")
-	f.write("<material id=\"1\" resistivity=\"100\" relativePermittivity=\"4.5\" relativePermeability=\"1\" /> <!-- concrete-->\n")
+	f.write("<material id=\"1\" resistivity=\"1000\" relativePermittivity=\"4.5\" relativePermeability=\"1\" /> <!-- concrete-->\n")
 
 def print_footer(f):
 	f.write("\n</environment>")
@@ -123,7 +124,7 @@ def make_wall(wall, height):
 
     # Print or use the calculated values for further processing
     # print_wall(posx, posy, angle, length, 5, height)
-    print_wall(posx,posy,angle,length,5,height)
+    print_wall(posx,posy,0,-length,randint(10, 15),height)
 
 
 
@@ -167,7 +168,7 @@ if __name__ == "__main__":
     # centerY = 4471112.47
 
     # Open the XML file for writing
-    f = open("Valencia10.xml", "w")
+    f = open("Val_Ob.xml", "w")
     
     # Write the XML file header
     print_header(f)
