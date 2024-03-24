@@ -3,7 +3,7 @@ import csv
 for i in range(0, 6):
     # Define the input and output file paths
     input_file = 'City_Profiles/Valencia/20_m/20_m_{0}_path_test.csv'.format(i)
-    output_file = 'City_Profiles/Valencia/120_m/60_m_{0}_path_test.csv'.format(i)
+    output_file = 'City_Profiles/Valencia/60_m/60_m_{0}_path_test.csv'.format(i)
 
     # Read the input CSV file
     with open(input_file, 'r') as file:

@@ -24,8 +24,8 @@ city_profile = "Valencia"
 num_UAVs = 6
 
 # Generate the list of CSV filenames
-# csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
-csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(num_UAVs)]
+csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
+# csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(num_UAVs)]
 # csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(num_UAVs)]
 
 
@@ -95,12 +95,12 @@ def PreProcessor(df, i):
         Location1['y(m)'] = Location1['y(m)'] - 4371810.62
         
     elif i == 0:
-        Location1['x(m)'] = Location1['x(m)'] - 728043.88	
-        Location1['y(m)'] = Location1['y(m)'] - 4371587.53
-
-    elif i == 5:
         Location1['x(m)'] = Location1['x(m)'] - 728256.43	
         Location1['y(m)'] = Location1['y(m)'] - 4372284.30
+
+    elif i == 5:
+        Location1['x(m)'] = Location1['x(m)'] - 728043.88	
+        Location1['y(m)'] = Location1['y(m)'] - 4371587.53
         
     Location1 = Location1.drop_duplicates(subset=['x(m)'], keep='last')
     Location1 = Location1.drop_duplicates(subset=['y(m)'], keep='last')
