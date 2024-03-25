@@ -24,9 +24,9 @@ city_profile = "Valencia"
 num_UAVs = 6
 
 # Generate the list of CSV filenames
-csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
+# csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
 # csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(num_UAVs)]
-# csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(num_UAVs)]
+csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(num_UAVs)]
 
 
 # Returns a PORT list according to the number of UAVs
@@ -78,16 +78,17 @@ def PreProcessor(df, i):
     
     #For UAV-UAV
     if i == 4:
-        Location1['x(m)'] = Location1['x(m)'] - 727832.10
-        Location1['y(m)'] = Location1['y(m)'] - 4372091.83
+        Location1['x(m)'] = Location1['x(m)'] - 727931.47
+        Location1['y(m)'] = Location1['y(m)'] - 4372280.28
         
     elif i == 1:
         Location1['x(m)'] = Location1['x(m)'] - 727812.94
         Location1['y(m)'] = Location1['y(m)'] - 4371914.10
 
     elif i == 2:
-        Location1['x(m)'] = Location1['x(m)'] - 727931.47
-        Location1['y(m)'] = Location1['y(m)'] - 4372280.28
+        Location1['x(m)'] = Location1['x(m)'] - 729565.40			
+        Location1['y(m)'] = Location1['y(m)'] - 4371810.62
+        
 
 
     elif i == 3:
@@ -96,8 +97,9 @@ def PreProcessor(df, i):
         
         
     elif i == 0:
-        Location1['x(m)'] = Location1['x(m)'] - 729565.40			
-        Location1['y(m)'] = Location1['y(m)'] - 4371810.62
+        Location1['x(m)'] = Location1['x(m)'] - 727832.10
+        Location1['y(m)'] = Location1['y(m)'] - 4372091.83
+        
 
     elif i == 5:
         Location1['x(m)'] = Location1['x(m)'] - 728043.88	
