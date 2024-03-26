@@ -82,8 +82,8 @@ def PreProcessor(df, i):
         Location1['y(m)'] = Location1['y(m)'] - 4372280.28
         
     elif i == 1:
-        Location1['x(m)'] = Location1['x(m)'] - 727812.94
-        Location1['y(m)'] = Location1['y(m)'] - 4371914.10
+        Location1['x(m)'] = Location1['x(m)'] - 727832.10
+        Location1['y(m)'] = Location1['y(m)'] - 4372091.83
 
     elif i == 2:
         Location1['x(m)'] = Location1['x(m)'] - 729565.40			
@@ -97,8 +97,9 @@ def PreProcessor(df, i):
         
         
     elif i == 0:
-        Location1['x(m)'] = Location1['x(m)'] - 727832.10
-        Location1['y(m)'] = Location1['y(m)'] - 4372091.83
+        Location1['x(m)'] = Location1['x(m)'] - 727812.94
+        Location1['y(m)'] = Location1['y(m)'] - 4371914.10
+        
         
 
     elif i == 5:
