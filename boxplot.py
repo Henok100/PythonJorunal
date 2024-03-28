@@ -56,6 +56,7 @@ for i, ax in enumerate(axs):
 
 # Super Title
 plt.suptitle("UAV-to-UAV Performance", fontsize=24).set_color('blue')
+plt.savefig('UAV_to_UAV.png')
 
 # Display the plot
 plt.show()
