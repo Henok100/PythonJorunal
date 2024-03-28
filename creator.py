@@ -12,6 +12,8 @@ def generate_height():
     max_height = 70
     target_min = 22
     target_max = 68
+    target_min = 23
+    target_max = 69
 
     # Define the weights for each range
     weights = []
