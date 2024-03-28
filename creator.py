@@ -10,8 +10,8 @@ def generate_height():
     # Define the desired range
     min_height = 20
     max_height = 70
-    target_min = 21
-    target_max = 69
+    target_min = 22
+    target_max = 68
 
     # Define the weights for each range
     weights = []
@@ -35,7 +35,7 @@ def init_df():
     # Set the filename to the path of the shapefile or CSV file containing the obstacle data
     # You can either uncomment the getFileName() function call and implement it to dynamically retrieve the filename,
     # or manually specify the filename as a string
-    filename = "Madrid.csv"
+    filename = "Barcelona.csv"
 
     # Print a message to indicate that the shapefile is being read
     print("Reading shapeFile")
@@ -155,20 +155,24 @@ if __name__ == "__main__":
     df = init_df()
     
     # Set up the coordinate converter using the UTM zone 30 and WGS84 ellipsoid
-    converter = Proj(proj='utm', zone=30, ellps='WGS84', preserve_units=False)
+    converter = Proj(proj='utm', zone=31, ellps='WGS84', preserve_units=False)
     
     # Define the center coordinates of the area of interest
 
-    #Valencia
+    # Valencia
     # centerX = 728094.82
     # centerY = 4372199.89
 
 	# Madrid
-    centerX = 441440.71
-    centerY = 4475195.78
+    # centerX = 441440.71
+    # centerY = 4475195.78
+
+    # Barcelona
+    centerX = 431273.65
+    centerY = 4583915.38
 
     # Open the XML file for writing
-    f = open("Madrid.xml", "w")
+    f = open("Barcelona.xml", "w")
     
     # Write the XML file header
     print_header(f)
