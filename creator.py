@@ -11,7 +11,7 @@ def generate_height():
     min_height = 20
     max_height = 70
     target_min = 21
-    target_max = 65
+    target_max = 69
 
     # Define the weights for each range
     weights = []
@@ -35,7 +35,7 @@ def init_df():
     # Set the filename to the path of the shapefile or CSV file containing the obstacle data
     # You can either uncomment the getFileName() function call and implement it to dynamically retrieve the filename,
     # or manually specify the filename as a string
-    filename = "UPV_3km.csv"
+    filename = "Madrid.csv"
 
     # Print a message to indicate that the shapefile is being read
     print("Reading shapeFile")
@@ -159,16 +159,16 @@ if __name__ == "__main__":
     
     # Define the center coordinates of the area of interest
 
-    #UPV
-    centerX = 728094.82
-    centerY = 4372199.89
+    #Valencia
+    # centerX = 728094.82
+    # centerY = 4372199.89
 
-	# # Madrid
-    # centerX = 435684.80
-    # centerY = 4471112.47
+	# Madrid
+    centerX = 441440.71
+    centerY = 4475195.78
 
     # Open the XML file for writing
-    f = open("UPV_3kmm.xml", "w")
+    f = open("Madrid.xml", "w")
     
     # Write the XML file header
     print_header(f)
