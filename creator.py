@@ -126,8 +126,7 @@ def make_wall(wall, height):
 
     # Print or use the calculated values for further processing
     # print_wall(posx, posy, angle, length, 5, height)
-    print_wall(posx,posy,0,-length,randint(10, 15),height)
-
+    print_wall(posx,posy,angle,length,randint(10, 15),height)
 
 
 

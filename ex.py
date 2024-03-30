@@ -1,9 +1,11 @@
 import csv
 
+city_profile = "Barcelona"
+
 for i in range(0, 6):
     # Define the input and output file paths
-    input_file = 'City_Profiles/Valencia/20_m/20_m_{0}_path_test.csv'.format(i)
-    output_file = 'City_Profiles/Valencia/120_m/120_m_{0}_path_test.csv'.format(i)
+    input_file = f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv'.format(i)
+    output_file = f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv'.format(i)
 
     # Read the input CSV file
     with open(input_file, 'r') as file:
