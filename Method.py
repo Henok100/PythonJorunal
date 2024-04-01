@@ -25,9 +25,9 @@ city_profile = "Barcelona"
 num_UAVs = 6
 
 # Generate the list of CSV filenames
-csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
+# csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
 # csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(num_UAVs)]
-# csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(num_UAVs)]
+csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(num_UAVs)]
 
 
 # Returns a PORT list according to the number of UAVs
@@ -67,28 +67,31 @@ def PreProcessor(df, i):
     # Barcelona
 
     if i == 0:
-        Location1['x(m)'] = Location1['x(m)'] - 431411.51
-        Location1['y(m)'] = Location1['y(m)'] - 4583587.60
-        
-    elif i == 1:
-        Location1['x(m)'] = Location1['x(m)'] - 430776.46
-        Location1['y(m)'] = Location1['y(m)'] - 4584153.01
-
-    elif i == 2:
-        Location1['x(m)'] = Location1['x(m)'] - 430341.61			
-        Location1['y(m)'] = Location1['y(m)'] - 4584659.33
-
-    elif i == 3:
         Location1['x(m)'] = Location1['x(m)'] - 430682.39	
         Location1['y(m)'] = Location1['y(m)'] - 4583500.31
               
-    elif i == 4:
-        Location1['x(m)'] = Location1['x(m)'] - 431322.35
-        Location1['y(m)'] = Location1['y(m)'] - 4583963.91
         
-    elif i == 5:
+    elif i == 1:
+        Location1['x(m)'] = Location1['x(m)'] - 431411.51
+        Location1['y(m)'] = Location1['y(m)'] - 4583587.60
+    
+    elif i == 2:
+        Location1['x(m)'] = Location1['x(m)'] - 430776.46
+        Location1['y(m)'] = Location1['y(m)'] - 4584153.01
+
+
+    elif i == 3:
         Location1['x(m)'] = Location1['x(m)'] - 431473.46	
         Location1['y(m)'] = Location1['y(m)'] - 4584239.86
+
+        
+    elif i == 4:
+        Location1['x(m)'] = Location1['x(m)'] - 430341.61			
+        Location1['y(m)'] = Location1['y(m)'] - 4584659.33       
+        
+    elif i == 5:
+        Location1['x(m)'] = Location1['x(m)'] - 431322.35
+        Location1['y(m)'] = Location1['y(m)'] - 4583963.91
 
     # Madrid
 
