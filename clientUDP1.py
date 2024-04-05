@@ -17,7 +17,7 @@ CLIENT = Method.GetHostName()
 FORMAT = 'utf-8'
 
 #For UAVs
-numUavs = 6   #Change the number as desired.
+numUavs = 11   #Change the number as desired.
 numRows = []
 LocationList = []
 
@@ -36,9 +36,9 @@ ADDR_Protocol = (CLIENT, PORT_Protocol)
     must be the  same as the Method's *csv_filename*.
 """
 
-#city_profile = "Valencia"
+city_profile = "Valencia"
 #city_profile = "Barcelona"
-city_profile = "Madrid"
+# city_profile = "Madrid"
 
 # csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(numUavs)]
 # csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(numUavs)]
@@ -47,86 +47,56 @@ csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' fo
 
 ClientSocket = Method.SocketCreator()
 
-XYZ_Dataframe = Method.DataFrameListMaker(numUavs)
+XYZ_Dataframe = Method.DataFrameListMaker(numUavs-5)
 
 Time = Method.TimeExtractor(pd.read_csv(csv_filename[0]))
-XYZ_NumPyArray= Method.NumPyArrayMaker(XYZ_Dataframe, numUavs)
+XYZ_NumPyArray= Method.NumPyArrayMaker(XYZ_Dataframe, numUavs-5)
 
-for i in range(numUavs):
+for i in range(numUavs-5):
      numRows.append(Method.numRows(XYZ_NumPyArray[i])) 
 
 NUMRows = min(numRows)  #for accuracy, since the rows of the csv file are not equal
 
 #for Protocol message
-def SendProtocolMessage():
-    for j in range(numUavs-1):
-        message = {"senderID":0,"receiverID":j,"payload":"Hello"}
+def SendProtocolMessage():        # Location1['y(m)'] = Location1['y(m)'] - 4371914.10
+    for j in range(numUavs-9):
+        message = {"senderID":j,"receiverID":6,"payload":"Hello"}
         ClientSocket.sendto(json.dumps(message).encode(FORMAT), ADDR_Protocol)
 
 def Send():
     t = -1
     counter = 1
-    ###  for LOS path (Mobile)
-    # Mov4 = M.Mov4()
-    # Mov6 = M.Mov6()
-    # Mov8 = M.Mov8() 
-    # Mov10 = M.Mov10()
     for Rowindex in range(NUMRows):
         if counter % 2 == 0: ## remove this conditional if your PC is high End.
             SendProtocolMessage()
         
         for UAVindex in range(numUavs):
-            temp = XYZ_NumPyArray[UAVindex]
-            # #For UAV to omnet GND (static)
-            # if UAVindex == 1:
-            #     x = 210
-            #     y = -100
-            #     z = 0
-            # elif UAVindex == 3:
-            #     x = 210
-            #     y = -200
-            #     z = 0
-            # elif UAVindex == 5:
-            #     x = 210
-            #     y = 0
-            #     z = 0
-            # elif UAVindex == 7:
-            #     x = 210
-            #     y = 100
-            #     z = 0
-            # elif UAVindex == 9:
-            #     x = 210
-            #     y = 200
-            #     z = 0
-            # elif UAVindex == 2:
-            #     x = Mov2[Rowindex][0]
-            #     y = Mov2[Rowindex][1]
-            #     z = Mov2[Rowindex][2]
-            # elif UAVindex == 4:
-            #     x = Mov4[Rowindex][0]
-            #     y = Mov4[Rowindex][1]
-            #     z = Mov4[Rowindex][2]
-            # elif UAVindex == 6:
-            #     x = Mov6[Rowindex][0]
-            #     y = Mov6[Rowindex][1]
-            #     z = Mov6[Rowindex][2]
-            # elif UAVindex == 8:
-            #     x = Mov8[Rowindex][0]
-            #     y = Mov8[Rowindex][1]
-            #     z = Mov8[Rowindex][2]    
-            # elif UAVindex == 10:
-            #     x = Mov10[Rowindex][0]
-            #     y = Mov10[Rowindex][1]
-            #     z = Mov10[Rowindex][2]         
-            # elif UAVindex == 0:
-            #     x = temp[Rowindex][0]
-            #     y = temp[Rowindex][1]
-            #     z = temp[Rowindex][2]               
-             ## For UAV to UAV (uncomment the 3 lines below)
-             ## Commnet line 97 - 101 and 109 - 152
-            x = temp[Rowindex][0]
-            y = temp[Rowindex][1]
-            z = temp[Rowindex][2]
+            if UAVindex == 6:
+                x = 176.8
+                y = 152.6
+                z = 0
+            elif UAVindex == 7:
+                x = 76.8
+                y = -147.4
+                z = 0
+            elif UAVindex == 8:
+                x = -323.2
+                y = -147.4
+                z = 0
+            elif UAVindex == 9:
+                x = -323.2
+                y = 52.6
+                z = 0
+            elif UAVindex == 10:
+                x = -323.2
+                y = 252.6
+                z = 0            
+            else: 
+                temp = XYZ_NumPyArray[UAVindex]
+
+                x = temp[Rowindex][0]
+                y = temp[Rowindex][1]
+                z = temp[Rowindex][2]
             toSend = f"{round(x, 1)},{round(y, 1)},{round(z, 1)}"
 
             print(toSend)
