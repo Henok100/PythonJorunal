@@ -37,12 +37,12 @@ ADDR_Protocol = (CLIENT, PORT_Protocol)
 """
 
 # city_profile = "Valencia"
-city_profile = "Barcelona"
-# city_profile = "Madrid"
+# city_profile = "Barcelona"
+city_profile = "Madrid"
 
-# csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(numUavs)]
+csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(numUavs)]
 # csv_filename = [f'City_Profiles/{city_profile}/60_m/60_m_{i}_path_test.csv' for i in range(numUavs)]
-csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(numUavs)]
+# csv_filename = [f'City_Profiles/{city_profile}/120_m/120_m_{i}_path_test.csv' for i in range(numUavs)]
 
 
 ClientSocket = Method.SocketCreator()
@@ -67,8 +67,8 @@ def Send():
     t = -1
     counter = 1
     for Rowindex in range(NUMRows):
-        if counter % 3 == 0: ## remove this conditional if your PC is high End.
-            SendProtocolMessage()
+        #if counter % 3 == 0: ## remove this conditional if your PC is high End.
+            #SendProtocolMessage()
         
         for UAVindex in range(numUavs):
             # Valencia
@@ -94,26 +94,48 @@ def Send():
             #     z = 0   
 
             # Barcelona
+            # if UAVindex == 6:
+            #     x = -116.8
+            #     y = 372.6
+            #     z = 0
+            # elif UAVindex == 7:
+            #     x = 196.8
+            #     y = -107.4
+            #     z = 0
+            # elif UAVindex == 8:
+            #     x = 423.2
+            #     y = -247.4
+            #     z = 0
+            # elif UAVindex == 9:
+            #     x = 423.2
+            #     y = 152.6
+            #     z = 0
+            # elif UAVindex == 10:
+            #     x = -233.2
+            #     y = 102.6
+            #     z = 0  
+
+            #   Madrid
             if UAVindex == 6:
-                x = -116.8
-                y = 372.6
+                x = -576.8
+                y = -650.6
                 z = 0
             elif UAVindex == 7:
-                x = 196.8
-                y = -107.4
+                x = -956.8
+                y = -552.6
                 z = 0
             elif UAVindex == 8:
-                x = 423.2
-                y = -247.4
+                x = -956.8
+                y = -852.6
                 z = 0
             elif UAVindex == 9:
-                x = 423.2
-                y = 152.6
+                x = -586.8
+                y = -950.6
                 z = 0
             elif UAVindex == 10:
-                x = -233.2
-                y = 102.6
-                z = 0         
+                x = -856.8
+                y = -752.6
+                z = 0       
             else: 
                 temp = XYZ_NumPyArray[UAVindex]
 
