@@ -23,7 +23,7 @@ city_profile = "Valencia"
 # city_profile = "Barcelona"
 # city_profile = "Madrid"
 
-num_UAVs = 2
+num_UAVs = 11
 
 # Generate the list of CSV filenames
 csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]

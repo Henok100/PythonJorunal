@@ -17,7 +17,7 @@ CLIENT = Method.GetHostName()
 FORMAT = 'utf-8'
 
 #For UAVs
-numUavs = 2   #Change the number as desired.
+numUavs = 11   #Change the number as desired.
 numRows = []
 LocationList = []
 
