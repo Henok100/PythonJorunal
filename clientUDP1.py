@@ -17,7 +17,7 @@ CLIENT = Method.GetHostName()
 FORMAT = 'utf-8'
 
 #For UAVs
-numUavs = 11   #Change the number as desired.
+numUavs = 2   #Change the number as desired.
 numRows = []
 LocationList = []
 
@@ -47,28 +47,28 @@ csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for 
 
 ClientSocket = Method.SocketCreator()
 
-XYZ_Dataframe = Method.DataFrameListMaker(numUavs-5)
+XYZ_Dataframe = Method.DataFrameListMaker(numUavs)
 
 Time = Method.TimeExtractor(pd.read_csv(csv_filename[0]))
-XYZ_NumPyArray= Method.NumPyArrayMaker(XYZ_Dataframe, numUavs-5)
+XYZ_NumPyArray= Method.NumPyArrayMaker(XYZ_Dataframe, numUavs)
 
-for i in range(numUavs-5):
+for i in range(numUavs):
      numRows.append(Method.numRows(XYZ_NumPyArray[i])) 
 
 NUMRows = min(numRows)  #for accuracy, since the rows of the csv file are not equal
 
 #for Protocol message
 def SendProtocolMessage():        
-    for j in range(numUavs-9):
-        message = {"senderID":j,"receiverID":6,"payload":"Hello"}
+    for j in range(numUavs-1):
+        message = {"senderID":0,"receiverID":j,"payload":"Hello"}
         ClientSocket.sendto(json.dumps(message).encode(FORMAT), ADDR_Protocol)
 
 def Send():
     t = -1
     counter = 1
     for Rowindex in range(NUMRows):
-        #if counter % 3 == 0: ## remove this conditional if your PC is high End.
-            #SendProtocolMessage()
+        #if counter % 2 == 0: ## remove this conditional if your PC is high End.
+        SendProtocolMessage()
         
         for UAVindex in range(numUavs):
             # Valencia
@@ -116,36 +116,34 @@ def Send():
             #     z = 0  
 
             #   Madrid
-            if UAVindex == 6:
-                x = -576.8
-                y = -650.6
-                z = 0
-            elif UAVindex == 7:
-                x = -956.8
-                y = -552.6
-                z = 0
-            elif UAVindex == 8:
-                x = -956.8
-                y = -852.6
-                z = 0
-            elif UAVindex == 9:
-                x = -586.8
-                y = -950.6
-                z = 0
-            elif UAVindex == 10:
-                x = -856.8
-                y = -752.6
-                z = 0       
-            else: 
-                temp = XYZ_NumPyArray[UAVindex]
+            # if UAVindex == 6:
+            #     x = -576.8
+            #     y = -650.6
+            #     z = 0
+            # elif UAVindex == 7:
+            #     x = -956.8
+            #     y = -552.6
+            #     z = 0
+            # elif UAVindex == 8:
+            #     x = -956.8
+            #     y = -852.6
+            #     z = 0
+            # elif UAVindex == 9:
+            #     x = -586.8
+            #     y = -950.6
+            #     z = 0
+            # elif UAVindex == 10:
+            #     x = -856.8
+            #     y = -752.6
+            #     z = 0       
+            # else: 
+            temp = XYZ_NumPyArray[UAVindex]
 
-                x = temp[Rowindex][0]
-                y = temp[Rowindex][1]
-                z = temp[Rowindex][2]
+            x = temp[Rowindex][0]
+            y = temp[Rowindex][1]
+            z = temp[Rowindex][2]
             toSend = f"{round(x, 1)},{round(y, 1)},{round(z, 1)}"
-
             print(toSend)
-            print("UAV ", str(UAVindex))
             ClientSocket.sendto(toSend.encode(FORMAT), ADDR[UAVindex])
         counter = counter + 1
         t = t + 1

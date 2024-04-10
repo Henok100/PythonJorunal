@@ -19,11 +19,11 @@ XYZ_NumPyArray = []
 
     must be the same as the clientUDP1's *csv_filename*.
 """
-# city_profile = "Valencia"
+city_profile = "Valencia"
 # city_profile = "Barcelona"
-city_profile = "Madrid"
+# city_profile = "Madrid"
 
-num_UAVs = 11
+num_UAVs = 2
 
 # Generate the list of CSV filenames
 csv_filename = [f'City_Profiles/{city_profile}/20_m/20_m_{i}_path_test.csv' for i in range(num_UAVs)]
@@ -96,43 +96,43 @@ def PreProcessor(df, i):
 
     # Madrid
 
-    if i == 0:
-        Location1['x(m)'] = Location1['x(m)'] - 443244.95			
-        Location1['y(m)'] = Location1['y(m)'] - 4476207.89
+    # if i == 0:
+    #     Location1['x(m)'] = Location1['x(m)'] - 443244.95			
+    #     Location1['y(m)'] = Location1['y(m)'] - 4476207.89
         
         
-    elif i == 1:
-        Location1['x(m)'] = Location1['x(m)'] - 442812.40	
-        Location1['y(m)'] = Location1['y(m)'] - 4475266.68
+    # elif i == 1:
+    #     Location1['x(m)'] = Location1['x(m)'] - 442812.40	
+    #     Location1['y(m)'] = Location1['y(m)'] - 4475266.68
 
-    elif i == 2:
-        Location1['x(m)'] = Location1['x(m)'] - 442553.85
-        Location1['y(m)'] = Location1['y(m)'] - 4475994.67
+    # elif i == 2:
+    #     Location1['x(m)'] = Location1['x(m)'] - 442553.85
+    #     Location1['y(m)'] = Location1['y(m)'] - 4475994.67
         
 
-    elif i == 3:
-        Location1['x(m)'] = Location1['x(m)'] - 442913.38
-        Location1['y(m)'] = Location1['y(m)'] - 4476532.30
+    # elif i == 3:
+    #     Location1['x(m)'] = Location1['x(m)'] - 442913.38
+    #     Location1['y(m)'] = Location1['y(m)'] - 4476532.30
               
-    elif i == 4:
-        Location1['x(m)'] = Location1['x(m)'] - 441936.13
-        Location1['y(m)'] = Location1['y(m)'] - 4475937.81
+    # elif i == 4:
+    #     Location1['x(m)'] = Location1['x(m)'] - 441936.13
+    #     Location1['y(m)'] = Location1['y(m)'] - 4475937.81
         
-    elif i == 5:
-        Location1['x(m)'] = Location1['x(m)'] - 442928.87	
-        Location1['y(m)'] = Location1['y(m)'] - 4476540.28 
+    # elif i == 5:
+    #     Location1['x(m)'] = Location1['x(m)'] - 442928.87	
+    #     Location1['y(m)'] = Location1['y(m)'] - 4476540.28 
  
     # Valencia
 
     ###
     #For Separation Test
-    # if i == 0:
-    #     Location1['x(m)'] = Location1['x(m)'] - 729013.96
-    #     Location1['y(m)'] = Location1['y(m)'] - 4371261.32
+    if i == 0:
+        Location1['x(m)'] = Location1['x(m)'] - 729013.96
+        Location1['y(m)'] = Location1['y(m)'] - 4371261.32
         
-    # elif i == 1:
-    #     Location1['x(m)'] = Location1['x(m)'] - 728643.96
-    #     Location1['y(m)'] = Location1['y(m)'] - 4371261.32
+    elif i == 1:
+        Location1['x(m)'] = Location1['x(m)'] - 729468.96
+        Location1['y(m)'] = Location1['y(m)'] - 4371261.32
     ###
     
     #For UAV-UAV
