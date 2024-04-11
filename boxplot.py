@@ -51,8 +51,8 @@ fig.subplots_adjust(wspace=0.4)
 for i, ax in enumerate(axs):
     ax.set_ylim(0, 1)
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y, _: '{:.0%}'.format(y)))
-    ax.set_xlabel(xlabel[i], fontsize = 16).set_color('blue')
-    ax.set_ylabel('Packet Delivery Ratio', fontsize = 16).set_color('blue')
+    ax.set_xlabel(xlabel[i], fontsize = 24).set_color('blue')
+    ax.set_ylabel('Packet Delivery Ratio', fontsize = 24).set_color('blue')
 
 # Super Title
 plt.suptitle("UAV-to-UAV Performance", fontsize=24).set_color('blue')
