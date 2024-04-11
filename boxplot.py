@@ -22,7 +22,7 @@ import matplotlib.ticker as ticker
 #          'Comparision/UAV_TO_VEH_NLOS/_60m/RF.csv', \
 #          'Comparision/UAV_TO_VEH_NLOS/_60m/NF.csv']
 
-files=['UAV_to_UAV_Madrid/FSP.csv', 'UAV_to_UAV_Madrid/LOG.csv', 'UAV_to_UAV_Madrid/Rician.csv', 'UAV_to_UAV_Madrid/Nakagami.csv']
+files=['UAV_to_UAV_Valencia/FSP.csv', 'UAV_to_UAV_Valencia/LOG.csv', 'UAV_to_UAV_Valencia/Rician.csv', 'UAV_to_UAV_Valencia/Nakagami.csv']
 
 data = []
 xlabel = ['FreeSpace','Log-Distance', 'RicianFading', 'NakagamiFading']
@@ -42,7 +42,7 @@ headers = list(data[0].columns)
 # Create a box plot of the data
 for i, ax in enumerate(axs):
     ax.boxplot(data[i])
-    ax.set_xticklabels(headers)
+    ax.set_xticklabels(headers, fontsize = 12)
 
 # Add space between subplots
 fig.subplots_adjust(wspace=0.4)
@@ -51,12 +51,13 @@ fig.subplots_adjust(wspace=0.4)
 for i, ax in enumerate(axs):
     ax.set_ylim(0, 1)
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y, _: '{:.0%}'.format(y)))
-    ax.set_xlabel(xlabel[i], fontsize = 16).set_color('blue')
-    ax.set_ylabel('Packet Delivery Ratio', fontsize = 16).set_color('blue')
+    ax.set_xlabel(xlabel[i], fontsize = 20).set_color('blue')
+    ax.set_ylabel('Packet Delivery Ratio', fontsize = 20).set_color('blue')
+    ax.tick_params(axis='y', labelsize=12)
 
 # Super Title
 plt.suptitle("UAV-to-UAV Performance", fontsize=24).set_color('blue')
-plt.savefig('UAV_to_UAV_Madrid.png')
+plt.savefig('UAV_to_UAV_Valencia.png')
 
 # Display the plot
 plt.show()
