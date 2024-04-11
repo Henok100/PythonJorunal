@@ -22,7 +22,7 @@ import matplotlib.ticker as ticker
 #          'Comparision/UAV_TO_VEH_NLOS/_60m/RF.csv', \
 #          'Comparision/UAV_TO_VEH_NLOS/_60m/NF.csv']
 
-files=['UAV_to_UAV_Valencia/FSP.csv', 'UAV_to_UAV_Valencia/LOG.csv', 'UAV_to_UAV_Valencia/Rician.csv', 'UAV_to_UAV_Valencia/Nakagami.csv']
+files=['UAV_to_UAV_Madrid/FSP.csv', 'UAV_to_UAV_Madrid/LOG.csv', 'UAV_to_UAV_Madrid/Rician.csv', 'UAV_to_UAV_Madrid/Nakagami.csv']
 
 data = []
 xlabel = ['FreeSpace','Log-Distance', 'RicianFading', 'NakagamiFading']
@@ -56,7 +56,6 @@ for i, ax in enumerate(axs):
 
 # Super Title
 plt.suptitle("UAV-to-UAV Performance", fontsize=24).set_color('blue')
-plt.savefig('UAV_to_UAV_Valencia.png')
 
 # Display the plot
 plt.show()
