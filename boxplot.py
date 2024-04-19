@@ -24,7 +24,7 @@ import matplotlib.ticker as ticker
 
 # files=['UAV_to_UAV_Madrid/FSP.csv', 'UAV_to_UAV_Madrid/LOG.csv', 'UAV_to_UAV_Madrid/Rician.csv', 'UAV_to_UAV_Madrid/Nakagami.csv']
 
-files = ['120_m/FSP.csv', '120_m/LOG.csv', '120_m/RF.csv', '120_m/NF.csv']
+files = ['20_m/FSP.csv', '20_m/LOG.csv', '20_m/RF.csv', '20_m/NF.csv']
 
 data = []
 xlabel = ['FreeSpace','Log-Distance', 'RicianFading', 'NakagamiFading']
@@ -44,7 +44,7 @@ headers = list(data[0].columns)
 # Create a box plot of the data
 for i, ax in enumerate(axs):
     ax.boxplot(data[i])
-    ax.set_xticklabels(headers, fontsize = 12)
+    ax.set_xticklabels(headers, fontsize = 20)
 
 # Add space between subplots
 fig.subplots_adjust(wspace=0.4)
