@@ -22,7 +22,9 @@ import matplotlib.ticker as ticker
 #          'Comparision/UAV_TO_VEH_NLOS/_60m/RF.csv', \
 #          'Comparision/UAV_TO_VEH_NLOS/_60m/NF.csv']
 
-files=['UAV_to_UAV_Madrid/FSP.csv', 'UAV_to_UAV_Madrid/LOG.csv', 'UAV_to_UAV_Madrid/Rician.csv', 'UAV_to_UAV_Madrid/Nakagami.csv']
+# files=['UAV_to_UAV_Madrid/FSP.csv', 'UAV_to_UAV_Madrid/LOG.csv', 'UAV_to_UAV_Madrid/Rician.csv', 'UAV_to_UAV_Madrid/Nakagami.csv']
+
+files = ['120_m/FSP.csv', '120_m/LOG.csv', '120_m/RF.csv', '120_m/NF.csv']
 
 data = []
 xlabel = ['FreeSpace','Log-Distance', 'RicianFading', 'NakagamiFading']
