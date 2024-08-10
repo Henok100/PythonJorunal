@@ -2,28 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-""" For Meduim_Urban """
-
-""" files = ['Meduim_Urban/BAR_UAVtoVeh_NLOS/TRG.csv', \
-         'Meduim_Urban/BAR_UAVtoVeh_NLOS/LNS.csv', \
-         'Meduim_Urban/BAR_UAVtoVeh_NLOS/RF.csv', \
-         'Meduim_Urban/BAR_UAVtoVeh_NLOS/NF.csv'] """
-
-""" For High_Urban """
-
-""" files = ['High_Urban/NY_UAVtoVeh_NLOS/TRG.csv', \
-         'High_Urban/NY_UAVtoVeh_NLOS/LNS.csv', \
-         'High_Urban/NY_UAVtoVeh_NLOS/RF.csv', \
-         'High_Urban/NY_UAVtoVeh_NLOS/NF.csv'] """
-
-"""For Comparision """
-# files = ['Comparision/UAV_TO_VEH_NLOS/_60m/TRG.csv', \
-#          'Comparision/UAV_TO_VEH_NLOS/_60m/LNS.csv', \
-#          'Comparision/UAV_TO_VEH_NLOS/_60m/RF.csv', \
-#          'Comparision/UAV_TO_VEH_NLOS/_60m/NF.csv']
-
-# files=['UAV_to_UAV_Madrid/FSP.csv', 'UAV_to_UAV_Madrid/LOG.csv', 'UAV_to_UAV_Madrid/Rician.csv', 'UAV_to_UAV_Madrid/Nakagami.csv']
-
 files = ['20_m/FSP.csv', '20_m/LOG.csv', '20_m/RF.csv', '20_m/NF.csv']
 
 data = []
