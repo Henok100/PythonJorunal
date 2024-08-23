@@ -81,3 +81,7 @@ Ensure that your CSV files are correctly named and placed in the appropriate dir
 City_Profiles/Valencia/20_m/20_m_0_path_test.csv
 City_Profiles/Valencia/20_m/20_m_1_path_test.csv
 ...
+
+## License
+
+This project is open-source and available under the MIT License.
